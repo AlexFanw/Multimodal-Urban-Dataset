@@ -3,7 +3,10 @@ from sshtunnel import SSHTunnelForwarder
 
 
 def connect_mysql():
-    # 通过SSH连接云服务器
+    """ 通过SSH连接云服务器
+
+    :return: pymysql连接通道
+    """
     server = SSHTunnelForwarder(
         ssh_address_or_host=('1.15.248.241', 22),  # 云服务器地址IP和端口port
         ssh_username='root',  # 云服务器登录账号admin

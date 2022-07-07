@@ -12,8 +12,16 @@ def insert(db, cur, sql, args):
         db.rollback()
 
 
-# load_csv函数，参数分别为csv文件路径，表名称，数据库名称
 def load_csv(csv_file_path, table_name, database, part_num):
+    """
+    将csv文件导入线上数据库中
+
+    :param csv_file_path: csv文件路径
+    :param table_name: 数据库表名
+    :param database: 数据库名
+    :param part_num: csv part序号（1-6）
+    :return:
+    """
     conn = connect_mysql()
     cur = conn.cursor()
     # 使用数据库
