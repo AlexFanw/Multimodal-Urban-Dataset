@@ -1,2 +1,25 @@
 # Basic Configuration
-API_KEY = "AIzaSyBRwq8CIk8k9Y4U2PNDXKC2wg9hTDRHnsI"  # 请前往Google Map自行申请
+from NYC.POI.get_poi_detail import get_poi_details
+
+"""
+API_KEY中，请前往https://console.cloud.google.com/google/maps-apis/api-list
+并为Places API设置配额为15000，以免超出$300金额限制
+"""
+API_KEY = ["xxxxxxxxx",
+           ]  # 请前往Google Map自行申请
+PHOTO_ID = 7830
+REVIEWS_ID = 34380
+
+
+def select_api():
+    for i in API_KEY:
+        resp = get_poi_details('ChIJY7RPnE1YwokRVXAVy9Fh7fg', ["reviews"], i)
+        if "error_message" in resp or resp == {}:
+            continue
+        else:
+            print("切换至免费账户:", i)
+            return i
+
+
+if __name__ == "__main__":
+    print(select_api())

@@ -36,4 +36,5 @@ class MysqlSave:
 
 if __name__ == '__main__':
     mysql = MysqlSave()
-    mysql.search_and_save('SELECT * FROM nyc_poi;', "nyc_poi.csv")
+    # mysql.search_and_save('SELECT * FROM nyc_poi;', "nyc_poi.csv")
+    mysql.search_and_save('SELECT * FROM nyc_poi_reviews;', "nyc_poi_reviews.csv")

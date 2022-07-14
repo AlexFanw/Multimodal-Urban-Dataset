@@ -1,4 +1,7 @@
+# Copyright：朱清岩
 import os
+
+from NYC.POI.config import select_api
 
 CUR_PATH = os.getcwd()
 LAST_PATH = os.path.abspath(os.path.join(os.getcwd(), "../../.."))
@@ -46,13 +49,14 @@ for lon in numpy.arange(lonRange[0], lonRange[1], lonDivision):
     print('已进行' + str(count) + '次请求，得到' + str(countLine) + '条有效信息，共' + str(total_query) + "次查询")
     if total_query > 10000:
         break
+    api_key = select_api()
     for lat in numpy.arange(latRange[0], latRange[1], latDivision):
         print('已进行' + str(count) + '次请求，得到' + str(countLine) + '条有效信息，共' + str(total_query) + "次查询")
         #   发请求
         if (count > 508):
             latlon = str(lat) + ',' + str(lon)
             basic_url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?key={0}&location={1}&radius={2}'
-            url = basic_url.format(googleKey, latlon, radius)
+            url = basic_url.format(api_key, latlon, radius)
             url = quote(url, safe=string.printable)
             req = urllib.request.urlopen(url, timeout=TIMEOUT)
             response = req.read().decode('utf-8')

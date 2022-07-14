@@ -1,10 +1,7 @@
 import requests
 import json
 
-from NYC.POI.config import API_KEY
-
-
-def get_poi_details(place_id, details, api_key=API_KEY):
+def get_poi_details(place_id, details, api_key):
     """获取poi详情数据
 
     :param place_id: poi唯一标识符
