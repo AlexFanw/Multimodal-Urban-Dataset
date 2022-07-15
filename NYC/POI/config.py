@@ -6,10 +6,8 @@ API_KEY中，请前往https://console.cloud.google.com/google/maps-apis/api-list
 并为Places API设置配额为15000，以免超出$300金额限制
 """
 API_KEY = ["xxxxxxxxx",
-           "-AIzaSyBdBtdYuBXZ2reBK0nSKOvpIBxL4o-HY1U",
-           "-AIzaSyCkrmymBaCBJ8DLoL57ej7RDO027HvmnRU",
            ]  # 请前往Google Map自行申请
-PHOTO_ID = 9156
+PHOTO_ID = 9160
 REVIEWS_ID = 40766
 
 
