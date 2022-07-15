@@ -1,3 +1,4 @@
 *.DS_Store
 .idea/
 /NYC/POI/POI_photos/
+*.csv

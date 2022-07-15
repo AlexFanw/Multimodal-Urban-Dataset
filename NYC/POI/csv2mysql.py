@@ -1,6 +1,6 @@
 import csv
 
-from NYC.POI.connect_mysql import connect_mysql
+from connect_mysql import connect_mysql
 
 
 def insert(db, cur, sql, args):

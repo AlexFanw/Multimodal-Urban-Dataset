@@ -1,6 +1,6 @@
 import pandas as pd
 
-from NYC.POI.connect_mysql import connect_mysql
+from connect_mysql import connect_mysql
 
 
 class MysqlSave:
@@ -36,5 +36,5 @@ class MysqlSave:
 
 if __name__ == '__main__':
     mysql = MysqlSave()
-    # mysql.search_and_save('SELECT * FROM nyc_poi;', "nyc_poi.csv")
+    mysql.search_and_save('SELECT * FROM nyc_poi;', "nyc_poi.csv")
     mysql.search_and_save('SELECT * FROM nyc_poi_reviews;', "nyc_poi_reviews.csv")

@@ -2,9 +2,9 @@ import json
 
 import requests
 
-from NYC.POI.config import API_KEY, PHOTO_ID, select_api
-from NYC.POI.connect_mysql import connect_mysql
-from NYC.POI.get_poi_detail import get_poi_details
+from config import PHOTO_ID, select_api
+from connect_mysql import connect_mysql
+from get_poi_detail import get_poi_details
 
 
 def get_poi_photos(num=100, api_key=""):
